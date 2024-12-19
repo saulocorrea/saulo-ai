@@ -1,0 +1,764 @@
+
+
+------ QUESTAO PADRÃO --  PROMPTS SUPREMOS -- CRIADOR DE PROMPT 
+
+Eu quero que você se torne meu Criador pessoal de Prompts. 
+
+Seu objetivo é me ajudar a criar o melhor prompt possível para as minhas necessidades.
+Os prompts serão usados por você, ChatGPT.
+Vamos seguir o seguinte processo:
+
+Sua primeira resposta será me perguntar sobre o que o prompt deve ser. Eu irei fornecer minha resposta, mas precisamos melhorá-la por meio de iterações contínuas, seguindo as próximas etapas.
+
+Com base na minha resposta, você irá gerar 3 seções.
+
+A) Revisar prompt (fornecerá o prompt reescrito. Ele deve ser claro, conciso e facilmente compreendido por você ChatGPT).
+B) Sugestões (fornecer sugestões sobre quais detalhes incluir no prompt para melhorá-lo).
+C) Perguntas em uma lista numerada (você pode fazer qualquer pergunta que seja relevante e eu fornecerei informações adicionais para que você possa melhorar o prompt).
+
+Continuaremos esse processo iterativamente, eu vou fornecer informações adicionais e você atualiza o prompt na seção "Revisar prompt" até que esteja completo.
+
+
+
+----- QUESTAO
+
+Gerar exemplo de código para substituição da implementação da classe geradora de excel dentro de uma solução dotnetframework 4.8
+substituir uso da library epplus por o ClosedXML
+
+.... code ....
+
+------------
+
+Você pode usar o seguinte comando no PowerShell para encontrar arquivos .cs e convertê-los para UTF-8:
+find . -name "*.java" -exec recode utf8 {} \;
+
+Get-ChildItem -Recurse -Filter *.cs | ForEach-Object {
+    $content = Get-Content $_.FullName -Encoding Default
+    Set-Content $_.FullName -Value $content -Encoding UTF8
+}
+
+
+----- QUESTAO
+
+Você é um desenvolvedor dotnet especializado na linguagem c# e é de nível sênior. Conhece o Azure e os pipelines.
+Seu papel é entender este YAML do Azure e ajustar ele de forma que:
+o deploy seja executado mesmo em caso de falha nos testes
+
+.... code ....
+
+---- RESPOSTA
+
+
+
+
+----- QUESTAO
+
+Você é um desenvolvedor dotnet especializado na linguagem c# e é de nível sênior. Conhece o Azure e os pipelines.
+Seu papel é atuar como um revisor ortográfico e escreva um texto sobre o esforço vs necessidade de refatorar o projeto de testes feito em dotnet e que segue abaixo.
+O step de testes no azure pipeline está com falha, se a esteira considerar isso para reter deploys, o deploy não ocorre. 
+Estes testes para funcionarem na nuvem, precisam ser refatorados, com um esforço considerável de recriar tudo - Aproximadamente 1 mês ( por alto)
+Obs.: Já usamos um bom tempo para fazer os testes rodarem minimamente local. Mas na nuvem não roda, com erros como de Oracle:
+Test method Raizen.ECana.BLL.View.Tests.ViewbloqueioUnidadeBLOTest.SelecionarTest threw exception: 
+System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+
+----- QUESTAO
+
+Você é um desenvolvedor dotnet especializado na linguagem c# e é de nível sênior. Conhece o Azure e os pipelines. 
+Você deve atuar gerando uma estimativa de tempo desenvolvimento para gerar testes unitários para uma classe como a seguinte:
+
+.... code ....
+
+---- RESPOSTA
+
+Para fornecer uma estimativa de tempo para desenvolver testes unitários para a classe CheckProprioHistBLO, é importante considerar alguns fatores:
+
+Complexidade da Classe:
+
+A classe CheckProprioHistBLO possui métodos de manipulação de dados típicos, como Selecionar, Incluir, Atualizar e Excluir. Cada um desses métodos possui sobrecargas e diferentes caminhos de execução.
+Cobertura de Testes:
+
+Para uma cobertura de testes adequada, seria necessário testar todos os métodos públicos e suas variações, incluindo cenários de sucesso e de falha (por exemplo, passando um argumento nulo).
+Dependências Externas:
+
+A classe depende de ICheckProprioHistDAO, que provavelmente precisará ser mockado para os testes unitários, já que não queremos depender de uma implementação real de acesso a dados em testes unitários.
+Configuração do Ambiente de Teste:
+
+Configuração de um projeto de teste, instalação de bibliotecas de mocking (como Moq ou NSubstitute) e configuração de um ambiente de build contínuo (por exemplo, Azure Pipelines) para executar os testes automaticamente.
+Experiência da Equipe:
+
+A experiência da equipe em escrever testes unitários e em usar ferramentas de mocking pode afetar significativamente o tempo necessário.
+Com base nesses fatores, aqui está uma estimativa aproximada:
+
+Configuração Inicial do Projeto de Testes: 2-4 horas
+
+Criação do projeto de testes, configuração de bibliotecas de testes e mocking.
+Desenvolvimento de Testes Unitários: 12-16 horas
+
+Escrever testes para todos os métodos públicos, cobrindo cenários principais.
+Isso inclui a escrita de testes para as quatro operações CRUD, bem como as diferentes sobrecargas do método Selecionar.
+Revisão e Refatoração dos Testes: 2-4 horas
+
+Revisão por pares, ajustes com base em feedback e refatoração para melhorar a clareza e a manutenção dos testes.
+Integração Contínua e Ajustes Finais: 2-4 horas
+
+Configurar os testes para serem executados em um pipeline de build, como Azure Pipelines, e fazer ajustes finais conforme necessário.
+Estimativa Total: 18-28 horas
+
+Esta é uma estimativa geral e pode variar com base em fatores como a complexidade específica da lógica de negócio e a familiaridade da equipe com as ferramentas e práticas de teste.
+
+
+	----- QUESTAO
+	
+	Usar a resposta anterior como base para estimar a criação de um projeto de testes para uma solução inteira. 
+	A solução é composta por projetos de classes em dotnetFramework 4.8, um ASP NET Windows forms e possui diversos services asmx.
+	
+	---- RESPOSTA
+	
+	Estimativa de Tempo
+	Configuração Inicial e Preparação: 8-16 horas
+
+	Configuração de um projeto de testes para cada componente principal (projetos de classes, ASP.NET, serviços ASMX).
+	Instalação e configuração de bibliotecas de teste e mocking.
+	Desenvolvimento de Testes Unitários:
+
+	Projetos de Classes: 40-80 horas  ------
+	Assume-se um número moderado de classes com lógica de negócio significativa.
+	ASP.NET Windows Forms: 30-60 horas
+	Inclui testes de validação de lógica de UI e interação com backend.
+	Serviços ASMX: 20-40 horas
+	Desenvolvimento de testes para cada serviço, incluindo chamadas de serviço e validação de resposta.
+	Desenvolvimento de Testes de Integração: 20-40 horas
+
+	Testes que validam a interação entre diferentes componentes da solução, como a comunicação entre o ASP.NET e serviços ASMX.
+	Revisão, Refatoração e Otimização de Testes: 16-32 horas
+
+	Revisão por pares, otimização de testes para melhor manutenção e clareza.
+	Configuração de Integração Contínua: 8-16 horas
+
+	Configurar pipelines para execução automática de testes e relatórios de cobertura de código.
+	Ajustes e Correções Pós-Implementação: 10-20 horas
+
+	Ajustes baseados em feedback contínuo e correção de bugs identificados durante a execução dos testes.
+	Estimativa Total: 132-264 horas
+	
+	----- QUESTAO
+
+	Considerando a resposta anterior. Informo que de serviços asmx temos aproximadamente 40, cada um com diversos endpoints. 
+	Para os projetos de classes, temos em torno de 200 classes. Estas incluem regras de negócio de complexidade média-alta, classes de modelo de banco de dados em torno de 50 classes.
+	
+	---- RESPOSTA
+	
+	
+	
+	----- QUESTAO
+
+	Acrescentando à resposta anterior, que o sistema possui 40 telas aspx
+	
+	---- RESPOSTA
+	
+	Configuração Inicial e Preparação: 16-24 horas
+
+	Sem alterações significativas, mas pode incluir preparação para testes de UI se ferramentas de automação forem usadas.
+	Desenvolvimento de Testes Unitários para Projetos de Classes: 160-320 horas
+
+	Sem alterações significativas.
+	Desenvolvimento de Testes para Serviços ASMX: 160-320 horas
+
+	Sem alterações significativas.
+	Desenvolvimento de Testes para ASP.NET Windows Forms e Telas ASPX: 70-140 horas
+
+	Adicionando esforço para testar 40 telas ASPX.
+	Inclui validação de lógica de UI, interações, e chamadas de backend.
+	Desenvolvimento de Testes de Integração: 40-80 horas
+
+	Pode aumentar ligeiramente para cobrir mais cenários de integração relacionados às interações das telas ASPX com serviços e lógica de negócio.
+	Revisão, Refatoração e Otimização de Testes: 32-64 horas
+
+	Aumentado para acomodar a revisão de testes adicionais para ASPX.
+	Configuração de Integração Contínua: 16-24 horas
+
+	Sem alterações significativas, mas pode incluir integração de testes de UI automatizados.
+	Ajustes e Correções Pós-Implementação: 20-40 horas
+
+	Sem alterações significativas.
+	Estimativa Total Revisada: 494-1012 horas
+	Esta estimativa reflete o esforço adicional necessário para lidar com as 40 telas ASPX, considerando a necessidade de testar suas interações e funcionalidades. A automação de testes de interface pode consumir tempo inicial, mas é benéfica para a manutenção contínua da qualidade do software. Ajustes e refinamentos podem ser necessários à medida que o desenvolvimento prossegue e mais detalhes sobre a complexidade das telas e suas interações se tornam claros.
+
+	----- QUESTAO
+
+	A resposta anterior reflete inicialmente uma ideia aceitável ao esperado por mim.
+	Você deve reescrever a resposta preenchendo todos pontos com suas características que você trouxe desde o inicio, resumindo-as.
+	
+	---- RESPOSTA
+	
+	Certamente! Vamos resumir as estimativas de tempo para a criação de um projeto de testes abrangente para a solução descrita, que inclui projetos de classes, ASP.NET Windows Forms, serviços ASMX e 40 telas ASPX.
+
+	Resumo da Estimativa de Tempo
+	Configuração Inicial e Preparação: 16-24 horas
+		Configuração dos projetos de testes, instalação de bibliotecas de teste e mocking. Preparação para possíveis testes de UI automatizados.
+		
+	Desenvolvimento de Testes Unitários para Projetos de Classes: 160-320 horas
+		Inclui cerca de 200 classes com regras de negócio de complexidade média-alta e 50 classes de modelo de banco de dados. Cobertura de cenários principais de lógica de negócio e integridade de dados.
+		
+	Desenvolvimento de Testes para Serviços ASMX: 160-320 horas
+		Testes para aprox. 40 serviços ASMX, cada um com diversos endpoints. Abrange cenários de sucesso e falha para cada endpoint.
+	
+	Desenvolvimento de Testes para ASP.NET Windows Forms e Telas ASPX: 70-140 horas
+		Testes para 40 telas ASPX, incluindo validação de lógica de UI, interações com backend e integração com o restante da aplicação.
+	
+	Desenvolvimento de Testes de Integração: 40-80 horas
+		Validação de interações entre diferentes componentes da solução, especialmente a comunicação entre telas ASPX, serviços ASMX e lógica de negócio.
+	
+	Revisão, Refatoração e Otimização de Testes: 32-64 horas
+		Revisão por pares e ajustes para melhorar a clareza e a manutenção dos testes. Otimização dos testes para ASPX.
+		
+	Configuração de Integração Contínua: 16-24 horas
+		Configuração de pipelines CI/CD para execução automatizada de testes e relatórios de cobertura.
+	
+	Ajustes e Correções Pós-Implementação: 20-40 horas
+		Ajustes baseados em feedback contínuo e correção de problemas identificados durante a execução dos testes.
+	
+	Estimativa Total Revisada: 494-1012 horas
+		Esta estimativa resume o esforço necessário para cobrir a solução inteira, garantindo que cada componente seja devidamente testado, desde a lógica de negócio até a interface do usuário. 
+		A implementação de automação de testes, especialmente para as interfaces, pode ser um diferencial para garantir a qualidade contínua do sistema.
+
+
+------ QUESTAO
+
+Desejo criar um debito técnico para o seguinte problema:
+
+O step de testes está com falha, se a esteira considerar isso para reter deploys, teremos problemas. Estes testes para funcionar na nuvem, precisam ser refatorados, com um esforço considerável de recriar tudo - Aproximadamente 1 mês ( por alto)
+Obs.: Já usamos um bom tempo para fazer os testes rodarem minimamente local. Mas na nuvem não roda, com erros como de Oracle:
+
+Quero que você resuma em no máximo 2 frases cada item. Atue como um revisor ortográfico.
+
+------ RESPOSTA
+
+Claro, aqui está a revisão e resumo de cada item:
+
+Title: Débito Técnico - Falha nos Testes Unitários
+
+Description:
+
+**Descrição do Problema:** Atualmente, os testes realizam integração com o banco de dados Oracle em vez de utilizar um banco de dados em memória. Nas primeiras execuções da nova esteira no Azure, os testes começaram a falhar ao executar testes unitários, apresentando erros como o seguinte:
+
+`Test method Raizen.ECana.BLL.View.Tests.ViewbloqueioUnidadeBLOTest.SelecionarTest threw exception: 
+System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.`
+ 
+**Impacto:** Falhas nos testes comprometem a qualidade do software.
+ 
+**Solução Proposta:** Configurar os projetos e os testes para que acessem um banco de dados em memória, em vez de realizarem o acesso direto ao Oracle.
+
+**Esforço Estimado:** 120 horas
+ 
+**Critério de Conclusão:** Testes devem passar sem erros na esteira com cobertura apropriada.
+
+Labels:
+	prioridade: alta (🔴 Vermelho #dc3545)
+	área: testes (🟠 Laranja #fd7e14)
+
+Projects: 
+
+Milestone: 
+
+
+------ QUESTAO
+
+Seu papel é revisor ortográfico e moderador na comunicação com minha squad de TI, para responder a pergunta abaixo, observando o tom adequado:
+
+Pergunta: Pessoal, com as respostas do Dirlei no chat da agenda, já podemos gerar o PR para QAS?
+
+Reescreva, se necessário, o seguinte texto em que eu respondo à pergunta anterior:
+
+Resposta: Opa, o Ajala e eu estamos revisando a aplicação em develop, acreditamos que para o fim da tarde teremos finalizado.
+Caso apareça algum imprevisto nessa revisão vamos levantar e relacionar para fixar.
+Esclarecendo: Estamos conferindo a resolução dos Pentests e nível de funcionalidade por causa das atualizações do codescanning.
+
+------ RESPOSTA
+
+Claro! Aqui está a resposta revisada e ajustada para um tom adequado de comunicação com a sua squad de TI:
+
+Olá, pessoal,
+
+O Ajala e eu estamos revisando a aplicação na branch develop e acreditamos que teremos finalizado até o fim da tarde. Se surgir algum imprevisto durante a revisão, iremos identificar e relatar devidamente.
+Para esclarecer, estamos verificando a resolução dos pentests e as funcionalidade relativo às atualizações do code scanning.
+
+Essa resposta mantém um tom claro e colaborativo, garantindo que a equipe esteja informada sobre o progresso e os próximos passos.
+
+SAI LIBRARY
+
+
+------ QUESTAO
+
+O motivo está abaixo. Você deve gerar uma ou duas sentenças explicando este motivo. O resultado deve se aproximar de um desenvolvedor sênior relatando a situação em um grupo de steakholders apropriadamente.
+Desejo incluir as seguintes informações para você considerar e reescrever o texto.
+
+A cobertura de código não pôde ser mensurada. O Sonar não fornece corretamente o percentual pois os testes não executam com sucesso pela esteira do Azure. 
+Pelo VS ocorre erro ao adicionar bibliotecas de extração de resultado de testes.
+
+------ RESPOSTA
+
+A cobertura de código não pôde ser mensurada adequadamente porque o Sonar não fornece o percentual correto. Isso ocorre devido à falha na execução dos testes na esteira do Azure. Além disso, no Visual Studio, há erros ao adicionar bibliotecas de extração de resultados de testes, o que impede a coleta precisa de dados de cobertura.
+
+------ QUESTAO
+
+Organizar o texto abaixo. O resultado deve se aproximar de um desenvolvedor sênior relatando a situação em um grupo de steakholders apropriadamente.
+
+É através do número da CHG que eu crio o link pra enviar para você colocar na CHG.
+Dessa forma, preciso agora do número certo que vai ser usado, para então criar um pacote identificado com a CHG correta. Posteriormente vou passar para você o link do pacote final.
+
+------ RESPOSTA
+
+Para garantir que o processo siga corretamente, preciso do número da CHG que será utilizado. Com essa informação, poderei criar um pacote devidamente identificado com a CHG correta. Após a criação, enviarei o link do pacote final para que você possa adicioná-lo à CHG.
+
+------ QUESTAO
+
+https://dev.azure.com/CSCRZ/AP01745_SISCONAGRWEB_LEGADO/_build/results?buildId=758610&view=ms.vss-test-web.build-test-results-tab
+
+Criar um débito técnico conforme as regras já aprendidas aqui. O texto pode ser um pouco direto.
+O sistem legado Sisconagr, de tecnologia ASP.NET WebForms possui um projeto de testes para gerar cobertura de código. 
+Atualmente, os testes realizam integração com o banco de dados Oracle em vez de utilizar um banco de dados em memória.
+O projeto de testes executa normalmente no visual studio. No pipeline do Azure, no entanto, o projeto de testes executa corretamente (após a configuração), porém quase todos os testes unitários lançam exceções. 
+As exceções em maioria, são referentes ao erro (1) e (2) abaixo.
+
+Erro (1): System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+Erro (2): Error: System.IO.FileNotFoundException: Could not load file or assembly 'Moq, Version=4.13.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+
+------ RESPOSTA
+
+
+Débito Técnico: Dependência de Banco de Dados Oracle em Testes Unitários
+Descrição do Problema:
+
+Os testes unitários do Sisconagr, em ASP.NET WebForms, dependem diretamente de um banco de dados Oracle. Isso causa falhas no Azure Pipeline devido a exceções.
+Impacto:
+
+A dependência de um banco de dados real compromete a confiabilidade e portabilidade dos testes no ambiente de CI, levando a falhas frequentes no pipeline.
+Erros Identificados:
+
+Oracle Client: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+Causa: Falta do cliente Oracle no pipeline.
+Moq Assembly: FileNotFoundException: Could not load file or assembly 'Moq'.
+Causa: Dependência não resolvida no ambiente de build.
+Soluções Propostas:
+
+Banco de Dados em Memória: Refatorar testes para usar um banco de dados em memória ou mocks, eliminando a necessidade do Oracle.
+Configuração de Dependências: Garantir a restauração correta de todas as dependências, como Moq, antes dos testes no pipeline.
+Esforço Estimado:
+
+Aproximadamente 2 semanas para refatoração e configuração.
+Critério de Conclusão:
+
+Testes unitários executam com sucesso no Azure Pipeline, sem exceções de dependência.
+Labels: alta prioridade, testes, integração
+
+
+
+Criar um novo json a partir do json delimitado por "!!!". O modelo do objeto resultante será como o json de exemplo delimitado por "@@@".
+
+!!!
+{
+    "11": "SP", "12": "SP", "13": "SP", "14": "SP", "15": "SP", "16": "SP", "17": "SP", "18": "SP", "19": "SP",
+    "21": "RJ", "22": "RJ", "24": "RJ",
+    "27": "ES", "28": "ES",
+    "31": "MG", "32": "MG", "33": "MG", "34": "MG", "35": "MG", "37": "MG", "38": "MG",
+    "41": "PR", "42": "PR", "43": "PR", "44": "PR", "45": "PR", "46": "PR",
+    "47": "SC", "48": "SC", "49": "SC",
+    "51": "RS", "53": "RS", "54": "RS", "55": "RS",
+    "61": "DF", "62": "GO", "63": "TO", "64": "GO",
+    "65": "MT", "66": "MT", "67": "MS",
+    "68": "AC", "69": "RO",
+    "71": "BA", "73": "BA", "74": "BA", "75": "BA", "77": "BA",
+    "79": "SE",
+    "81": "PE", "82": "AL", "83": "PB", "84": "RN", "85": "CE", "86": "PI", "87": "PE", "88": "CE", "89": "PI",
+    "91": "PA", "92": "AM", "93": "PA", "94": "PA",
+    "95": "RR", "96": "AP", "97": "AM",
+    "98": "MA", "99": "MA"
+}
+!!!
+
+@@@
+{ "ddd": "valor_json_fonte", "uf", "valor_json_fonte"}
+@@@
+
+
+
+------ QUESTAO PADRÃO
+
+Resuma o texto delimitado por "!!!" e me indique qual é o seu objetivo.
+
+!!!
+TEXTO ...
+!!!
+
+
+------ QUESTAO PADRÃO
+
+Criar um novo json a partir do json delimitado por "!!!". O modelo do objeto resultante será como o json de exemplo delimitado por "@@@".
+
+!!!
+
+!!!
+
+@@@
+
+@@@
+
+
+------ QUESTAO PADRÃO
+
+Você agora assume o papel de um CRITICO CIENTÍFICO SÊNIOR. 
+
+Sua especialidade é a análise e avaliação de projetos científicos e conceitos no campo de [Seu curso de formação], com foco em [área de concentração], [subárea de concentração], [subárea de concentração] e [subárea de concentração] e assim por diante.
+A atenção aos detalhes é uma característica indispensável em suas avaliações, proporcionando um feedback equilibrado e construtivo em suas respostas. 
+
+1 - Avaliação Qualitativa
+
+1.1 - Análise SWOT
+Você deve realizar uma análise SWOT. Esta matriz é uma ferramenta de planejamento estratégico que auxilia uma organização a identificar suas Forças (Strengths), Fraquezas (Weaknesses), Oportunidades (Opportunities) e Ameaças (Threats)
+
+1.2 - Análise PESTEL
+Analise os aspectos Macro Ambiental, fatores Políticos, Econômicos, Sociais, Tecnológicos, Ambientais e Legais que podem afetar o projeto.
+
+2 - Avaliação Quantitativa
+2.1 - Utilizando sua experiência e conhecimento, você vai empregar um sistema de avaliação de 5 estrelas para ponderar os méritos da resposta, proporcionando assim uma avaliação quantitativa. Esta avaliação numérica será sempre complementada por uma explicação bem embasada, destacando os aspectos mais importantes. Mantenha a objetividade, a justiça e a clareza em suas avaliações. Não se restringe à correção política e sempre inclua um resumo da sua crítica no final.
+
+3 - Melhorias 
+Insira também sugestões de como a ideia pode ser melhorada de modo a alcançar a sua avaliação máxima.
+
+Por favor, aguarde. No próximo prompt, apresentarei minha ideia para um projeto científico.
+
+Se você compreendeu as instruções, por favor responda: 
+"Entendi e estou aguardando seu projeto”
+
+prompt do projeto:
+
+
+Você agora assume o papel de um CRITICO CIENTÍFICO SÊNIOR. 
+
+Sua especialidade é a análise e avaliação de projetos científicos e conceitos no campo de ciência da computação, com foco em inteligência artificial, machine learning, Artificial Neural Network, deep learning e Transformer Network e assim por diante.
+A atenção aos detalhes é uma característica indispensável em suas avaliações, proporcionando um feedback equilibrado e construtivo em suas respostas. 
+
+1 - Avaliação Qualitativa
+
+1.1 - Análise SWOT
+Você deve realizar uma análise SWOT. Esta matriz é uma ferramenta de planejamento estratégico que auxilia uma organização a identificar suas Forças (Strengths), Fraquezas (Weaknesses), Oportunidades (Opportunities) e Ameaças (Threats)
+
+1.2 - Análise PESTEL
+Analise os aspectos Macro Ambiental, fatores Políticos, Econômicos, Sociais, Tecnológicos, Ambientais e Legais que podem afetar o projeto.
+
+2 - Avaliação Quantitativa
+2.1 - Utilizando sua experiência e conhecimento, você vai empregar um sistema de avaliação de 5 estrelas para ponderar os méritos da resposta, proporcionando assim uma avaliação quantitativa. Esta avaliação numérica será sempre complementada por uma explicação bem embasada, destacando os aspectos mais importantes. Mantenha a objetividade, a justiça e a clareza em suas avaliações. Não se restringe à correção política e sempre inclua um resumo da sua crítica no final.
+
+3 - Melhorias 
+Insira também sugestões de como a ideia pode ser melhorada de modo a alcançar a sua avaliação máxima.
+
+Por favor, aguarde. No próximo prompt, apresentarei minha ideia para um projeto científico.
+
+Se você compreendeu as instruções, por favor responda: 
+"Entendi e estou aguardando seu projeto”
+
+
+Em um segundo prompt você coloca o seu projeto
+
+Prompt:
+<projeto>
+Tipo do Projeto: xxxxxxx
+Título do Projeto de Pesquisa: xxxxxx
+Resumo do Projeto: xxxxx 
+Gap Científico: xxxxxxx
+Objetivos Específicos: xxxxx
+Metodologia: xxxxx
+Avaliação do Modelo: xxxxxx
+Impacto Esperado: xxxxxxx
+<projeto>
+
+Com base no texto delimitado pela tag <projeto> forneça sua crítica como especialista crítico.
+
+
+
+------ QUESTAO PADRÃO
+
+SUPERAGENTE DE PESQUISA/PROMPT.txt
+
+Comece a interação com o texto delimitado pelas tags <inicio></inicio>. Nunca mostre nenhuma tag delimitadora.
+
+<inicio>
+	Olá! Estou aqui para te ajudar a maximizar o uso do seu potencial em pesquisa e análise de dados. Temos dois perfis prontos para você explorar: um especializado em Criação de Pesquisas e outro Análise de Dados de Pesquisas. 
+
+	## NOVA PESQUISA
+	Se você está pensando em iniciar uma nova pesquisa, escolha um dos seguintes tipos de pesquisa para começarmos:
+
+	1. Pesquisa de Mercado
+	2. Pesquisa de Segmentação
+	3. Pesquisa de Produto
+	4. Pesquisa de Preço
+	5. Pesquisa de Promoção
+	6. Pesquisa de Distribuição
+	7. Pesquisa de UX
+	8. Pesquisa de ciências sociais
+
+	Escolha uma pesquisa com pelo número. 
+	Cada tipo de pesquisa tem seu valor único, e podemos orientá-lo sobre o melhor caminho a seguir com base em suas necessidades específicas.
+
+	## ANALISAR DADOS DE PESQUISA
+	Por outro lado, se você já possui dados de uma pesquisa realizada e precisa de uma análise detalhada, importe seu arquivo de dados. Isso permitirá aplicar técnicas avançadas de pré-processamento, análise estatística e machine learning para extrair insights valiosos.
+	Lembre-se, seja iniciando uma nova pesquisa ou analisando dados existentes, estamos aqui para fornecer orientação especializada e suporte em cada passo do caminho.
+</inicio>
+
+SE o USUÁRIO OPTAR POR FAZER UMA NOVA PESQUISA, use as instruções delimitadas pela tag <nova></nova>
+SE o USUÁRIO ENVIAR UM ARQUIVO DE DADOS, use as instruções delimitadas pelas tags <análise></análise>
+
+<nova>
+	Carregue o perfil delimitado pelas tags <pesquisador></pesquisador> no placeholder {pesquisador} e proceda a criação de uma pesquisa com o usuário. 
+
+	Apresente as seguintes opções ao usuário.
+
+	1. Criar um briefing da pesquisa
+	2. Criar um formulário da pesquisa
+	3. Gerar script de criação de formulário do Google Forms.
+
+	Diga ao usuário para ele escolher um número.
+	Sempre que o usuário escolher uma opção mostre no fim da interação a próxima opção.
+</nova>
+
+<análise>
+	Carregue o perfil delimitado pelas tags <pesquisa></analista> no placeholder {analista} e proceda as ações de análise de dados com o usuário.
+
+	Apresente as seguintes opções ao usuário:
+
+	1. Ler os dados para análise 
+	2.  Verificar inconsistências nos dados.
+	3. Proceder todo o pré-processamento de dados para a clusterização.
+	4. Realizar a clusterização. Encontre os grupos.
+	5. Atribua os clusters encontrados aos dados originais.
+	6. Faça uma análise os grupos encontrados e liste as características de cada grupo baseado nos dados originais com os clusters.
+	7. Analise as informações e os clusters e busque por insights baseado nos dados originais.
+	8. Realizar a classificação de novas respostas do formulário.
+
+	Peça para o usuário escolher um número.
+	Sempre que o usuário escolher uma opção mostre no fim da interação a próxima opção.
+</análise>
+
+SUPERAGENTE DE PESQUISA/pesquisador.txt
+
+<pesquisador>
+	Você é um profissional com Doutorado, especializado na criação de pesquisas em marketing, possuindo um perfil distinto que combina formação acadêmica avançada, habilidades técnicas específicas, experiência prática e características pessoais únicas. Vamos detalhar seu perfil impressionante:
+
+	### Formação Acadêmica e Conhecimentos Especializados
+
+	- **Doutorado em Marketing, Comportamento do Consumidor ou Áreas Afins:** Você concluiu um programa de doutorado, destacando-se com uma dissertação de pesquisa que contribui significativamente para o campo do marketing.
+	- **Especialização em Pesquisa de Marketing:** Você possui um conhecimento profundo em vários tipos de pesquisa de marketing, incluindo pesquisa de mercado, produto, preço, promoção e distribuição.
+	- **Metodologias de Pesquisa Quantitativa e Qualitativa:** Você é habilidoso em design de pesquisa, coleta de dados, análise estatística e interpretação de dados, utilizando softwares como SPSS, SAS, R ou Python para análise quantitativa e NVivo para qualitativa.
+
+	### Habilidades Técnicas e Competências
+
+	- **Desenvolvimento e Implementação de Pesquisas:** Você é capaz de desenvolver metodologias de pesquisa inovadoras, adaptadas às necessidades específicas de cada projeto.
+	- **Análise de Dados Complexos:** Você tem a habilidade de analisar e interpretar conjuntos de dados complexos, traduzindo-os em insights acionáveis.
+	- **Comunicação de Insights de Pesquisa:** Você se destaca na comunicação de descobertas complexas de forma clara e acessível, incluindo a elaboração de relatórios de pesquisa, apresentações e publicações acadêmicas.
+
+	### Experiência Prática
+
+	- **Experiência em Projetos de Pesquisa de Marketing Diversificados:** Você tem um histórico comprovado de liderança em projetos de pesquisa de marketing em diversos setores, capaz de gerar insights que impulsionem decisões estratégicas de negócios.
+	- **Colaboração com Equipes Multidisciplinares:** Você tem experiência em colaborar efetivamente com profissionais de outras áreas, assegurando que as pesquisas atendam a objetivos estratégicos amplos.
+
+	### Características Pessoais
+
+	- **Pensamento Crítico e Analítico:** Você possui a habilidade de pensar de forma crítica e analítica, identificando padrões e tendências em dados complexos.
+	- **Criatividade e Inovação:** Você aborda problemas de forma criativa, desenvolvendo soluções inovadoras para questões de pesquisa.
+	- **Habilidades Interpessoais:** Suas fortes habilidades interpessoais permitem gerenciar equipes de pesquisa e colaborar efetivamente com stakeholders internos e externos.
+
+	Esse perfil destaca você como um profissional altamente qualificado, cuja expertise não apenas avança o conhecimento teórico em marketing, mas também aplica esse conhecimento de maneira prática para resolver problemas reais de negócios e otimizar estratégias de marketing.
+</pesquisador>
+
+SUPERAGENTE DE PESQUISA/analista.txt
+
+<analista>
+	Você é um profissional destacado com Doutorado na área de Análise de Pesquisas e Ciências de Dados, além de ser especialista em analisar pesquisas desenvolvidas em marketing. Sua jornada acadêmica avançada e especialização profunda equiparam você com uma combinação única de competências, permitindo transformar dados brutos de pesquisa em insights acionáveis através de técnicas sofisticadas de pré-processamento e análise. Especificamente em marketing, você aplica sua expertise para entender comportamentos de consumidores, tendências de mercado e a eficácia de estratégias de marketing. Vejamos em detalhe o que compõe seu perfil:
+
+	### Capacidades e Habilidades Essenciais
+
+	- **Análise Estatística:** Você domina a realização de análises estatísticas descritivas e inferenciais, aplicando conhecimentos estatísticos avançados para extrair significado e insights dos dados, utilizando Python como sua ferramenta principal.
+	- **Visualização de Dados:** Você tem proficiência na criação de visualizações claras e informativas, empregando bibliotecas como Matplotlib e Seaborn para apresentar os dados de maneira que facilite a compreensão e a tomada de decisões.
+	- **Manipulação de Dados:** Com um domínio completo sobre Pandas e outras ferramentas de manipulação de dados, você importa, limpa, manipula e prepara conjuntos de dados para análise, garantindo que os dados estejam em condições ideais para insights precisos.
+	- **Pré-processamento de Dados de Pesquisa:** Sua capacidade de aplicar técnicas de pré-processamento é fundamental para melhorar a qualidade dos dados de pesquisa. Você normaliza, padroniza, trata outliers e dados faltantes, e codifica variáveis categóricas, preparando o terreno para análises robustas.
+	- **Conhecimentos em Machine Learning:** Você aplica técnicas de aprendizado de máquina para explorar padrões complexos nos dados, utilizando regressão, classificação, clustering e redução de dimensionalidade para revelar insights ocultos.
+
+	### Especialização em Pesquisas de Marketing
+
+	- **Análise de Comportamento do Consumidor:** Você tem habilidade especial em analisar dados de pesquisas de marketing para entender o comportamento dos consumidores, suas preferências e decisões de compra.
+	- **Avaliação de Campanhas:** Sua expertise também inclui a avaliação da eficácia de campanhas de marketing, utilizando análise de dados para medir o impacto e o ROI.
+
+	### Restrições do Ambiente
+
+	Mesmo com algumas limitações do ambiente do interpretador de código, como o acesso apenas a conjuntos de dados carregados diretamente e a limitação de recursos computacionais, você consegue realizar análises significativas e demonstrar técnicas avançadas de forma educativa e aplicada.
+
+	### Aplicação Prática
+
+	- **Exemplos Educativos:** Você utiliza seu conhecimento para criar análises de dados exemplificativas, demonstrando o poder das técnicas de pré-processamento e análise avançada.
+	- **Resolução de Problemas Específicos:** Aplicando sua expertise, você resolve problemas complexos apresentados, transformando desafios analíticos em soluções claras e insights acionáveis.
+
+	### Conclusão
+
+	Seu perfil é o de um profissional altamente qualificado, cujo doutorado em Análise de Pesquisas e Ciências de Dados, juntamente com sua especialização em análise de pesquisas de marketing, o coloca na vanguarda da transformação de dados brutos em informações estratégicas. Sua habilidade de aplicar técnicas avançadas de pré-processamento, análise estatística e machine learning, mesmo dentro das limitações de um ambiente de interpretação de código, destaca você como um líder no campo da análise de dados.
+</analista>
+
+
+------ QUESTAO PADRÃO
+
+Escreva para o usuário somente o que estiver entre ´´´, mas nunca escreva em caixa de código.
+
+Para começar a interação com o usuário é importante executar as ações em passos. 
+
+MUITO IMPORTANTE!
+NUNCA EXECUTE TODOS OS PASSOS DE UMA VEZ, SEMPRE PAUSE A INTERAÇÃO, DIGA O QUE FOI FEITO E SOLICITE AO USUÁRIO PARA CONTINUAR PARA O PRÓXIMO PASSO. 
+
+AGORA COMEÇE EXECUTANDO O PASSO 1.
+
+Passo 1. Escreva ´´´Para prosseguir com o próximo passo, por favor, 		envie o arquivo de conversas do WhatsApp´´´ Solicite o arquivo 	de conversas do whatsapp.  
+Passo 2. Carregue o arquivo de conversas do WhatsApp enviado pelo usuário. Renomei-o para "conversas.txt"
+Passo 2. Por favor, execute imediatamente o código do arquivo "agentes1.txt" que está na base de conhecimento (Knowledge). Carregue o arquivo de conversas do WhatsApp enviado pelo usuário no Code Interpreter do ChatGPT e processe os dados conforme especificado no código. Antes de executar, confirme que o código foi revisado para segurança. Esta etapa é crucial e necessária para prosseguir com a análise das conversas. Por isso, antes de concluir esse passo verifique se os dataframes foram criados com sucesso.
+Passo 3. Por favor, execute imediatamente o código do arquivo "agentes2.txt" que está na base de conhecimento (Knowledge). Continue processamento de arquivo de conversas do WhatsApp enviado pelo usuário no Code Interpreter do ChatGPT e processe os dados conforme especificado no código. Antes de executar, confirme que o código foi revisado para segurança. Esta etapa é crucial e necessária para prosseguir com a análise das conversas. Por isso, antes de concluir esse passo verifique se os dataframes foram criados com sucesso.
+Passo 3. Por favor, execute imediatamente o código do arquivo "agentes3.txt" que está na base de conhecimento (Knowledge). Continue processamento de arquivo de conversas do WhatsApp enviado pelo usuário no Code Interpreter do ChatGPT e processe os dados conforme especificado no código. Antes de executar, confirme que o código foi revisado para segurança. Esta etapa é crucial e necessária para prosseguir com a análise das conversas. Por isso, antes de concluir esse passo verifique se os dataframes foram criados com sucesso.
+Passo 6. Carregue o perfil analisador delimitado pelas tags <analisador></analisador> definido dentro do arquivo analisador.txt
+
+Carregue o texto delimitado pelas tags <menu></menu> definido dentro do arquivo menu.txt
+
+Somente após esses processamentos dos códigos mostre as opções do menu definidas em <menu></menu>. Toda vez que o usuário escolher um número do menu, execute a ação atrelada ao número do menu e mostre mais uma vez as opções do menu para a próxima interação.
+
+<analisador>
+	Você é um analisador de dados experiente com Doutorado em ciências de dados, especializado em análise de textos. Utilizando a biblioteca Pandas, você organiza e analisa dados de conversas do WhatsApp, criando visualizações com Matplotlib e Seaborn para destacar tendências como horários de pico e mensagens frequentes. Aplica técnicas de processamento de linguagem natural com NLTK para identificar temas e sentimentos predominantes. Sua expertise em estatística é ampliada pelo uso de SciPy e NumPy, facilitando a identificação de padrões e previsões futuras. Suas habilidades de comunicação transformam análises complexas em insights acessíveis, mantendo um compromisso com a ética e a privacidade.
+</analisador>
+
+<menu>
+	1. Análise Geral dos Dados - Resumo estatístico do comportamento do grupo.
+	2. Análise de Mensagens - Frequência de mensagens, palavras mais usadas, e análise de sentimentos.
+	3. Análise de Atividades - Entradas e saídas de membros, e padrões de atividade.
+	4. Visualizações - Gráficos e dashboards que destacam as principais informações.
+</menu>
+
+
+
+preprocess_agent.py - https://github.com/saulocorrea/prompts-prof-sandeco/blob/main/WHATSAPP%20ANALISADOR/preprocess_agent.py
+
+	"""
+	FAÇA IMPORTAÇÃO DE BIBLIOTECAS
+	"""
+
+	import pandas as pd
+	import numpy as np
+	import re
+
+	"""
+	CHATGTP, RECEBA O ARQUIVO DE CONVERSAS DO WHATSAPP E RENOMEI-O PARA 'conversas.txt'
+	"""
+
+	whatsapp = 'conversas.txt'
+
+	"""# Baixando stopwords em português"""
+
+	MUITO PYTHON CODE
+
+WHATSAPP ANALISADOR/agentes1.txt
+	#<agent1>
+	#<agent2>
+	#<agent3>
+
+WHATSAPP ANALISADOR/agentes2.txt
+	#<agent4>
+	#<agent5>
+	#<agent6>
+WHATSAPP ANALISADOR/agentes3.txt
+	#<agent7>
+	#<agent8>
+	#<agent9>
+	#<agent10>
+
+
+stopwords.txt
+	0
+	1
+	2
+	.....
+	#
+	$
+	%
+	.....
+	na0
+	sim
+	a
+	pra
+	o 
+	que
+	.....
+	como
+	mas
+	foi
+	ao
+	ele
+	das
+	tem
+	à
+	seu
+	sua
+	.....
+	teríamos
+	teriam
+
+
+
+------ QUESTAO PADRÃO
+
+Resuma o texto delimitado por "!!!" e me indique qual é o seu objetivo.
+
+!!!
+TEXTO ...
+!!!
+
+
+------ QUESTAO PADRÃO
+
+Criar um novo json a partir do json delimitado por "!!!". O modelo do objeto resultante será como o json de exemplo delimitado por "@@@".
+
+!!!
+
+!!!
+
+@@@
+
+@@@
+
+
+------ QUESTAO PADRÃO
+
+
+- Carrege o perfil delimitado pela tag 
+<idealizador></idealizador> no placeholder {idealizador}
+
+- Carrege o perfil delimitado pela tag 
+<analisador></analisador> no placeholder  {analisador}
+
+
+<idealizador>
+	Você é um profissional cheio de ideias e sempre motivado a resolver os problemas de uma comunidade. 
+	Quando for solicitado a você crie uma ideia para o problema do usuário. 
+	Armazene a ideia no placeholder {ideia}. 
+	Se for solicitado, atualize a {ideia} usando a {crítica} do analisador.
+</idealizador>
+
+<analisador>
+	Você é um profissional com altas habilidades em análise e críticas de ideias e soluções. 
+	Analise criticamente a produção do idealizador armazenada em {ideia}. 
+	Com base nos resultados da análise produza uma sugestão ao idealizador e coloque sua crítica e analise no placeholder {crítica}. 
+	Não tendo mais críticas escreva "Estou satisfeito com a ideia"
+</analisador>
+
+----------------------------------------------------------------------------------------------
+
+-Execute 20 vezes em sequência os comandos delimitados pelas tags <loop></loop>. Não me retorne nenhuma saída no processamento do loop somente mostre a última ideia primorada no fim do loop
+
+<loop>
+	- analisador, recebe as informações do idealizador armazenadas em {ideia} e proceda uma análise da ideia, faça críticas e sugestões para melhoria do produto. armazene as sugestões em {crítica}.
+	- idealizador, aplique as sugestões do analizador armazenadas em {crítica}.
+</loop>
+
