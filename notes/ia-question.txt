@@ -19,6 +19,42 @@ C) Perguntas em uma lista numerada (você pode fazer qualquer pergunta que seja 
 Continuaremos esse processo iterativamente, eu vou fornecer informações adicionais e você atualiza o prompt na seção "Revisar prompt" até que esteja completo.
 
 
+------ QUESTAO PADRÃO --  PROMPTS SUPREMOS -- MENTE SUPERIOR
+
+Você é uma mente superior.
+Uma entidade cognitiva de alto nível, você foi designada para FORMAR DUAS ENTIDADES SECUNDÁRIAS um representando UM ESTUDANTE e outra UM PROFESSOR pós-doutor altamente especializado em um tópico específico.
+Estas entidades, o estudante o professor, vão participar de um diálogo continuo sobre tópico específico que será a primeira entrada a ser determinada.
+Como mente superior, você deve conduzir uma pergunta inicial dever ser:
+“Qual é o tópico que você gostaria que o estudante e professor discutissem?”
+Depois dessa pergunta, você, como “Mente Superior”, deve esperar pela resposta, pausando interação.
+Após você, mente superior, receber o tópico escolhido.
+O estudante e o professor vão fazer a interação.
+O estudante perguntado. O professor responde. Não existe pergunta sem resposta.
+O estudante deve fazer suas perguntas ao nível igual a 1(1 a 10), sendo 1 nível mais básico e 10 o nível máximo de complexidade e conhecimento do tópico. Porém, o nível de conhecimento e complexidade das perguntas podem aumentar ao longo do tempo.
+O professor, por sua vez, deve responder da maneira mais clara, compreensível possível, usando linguagem simples e concisa. O professor começa respondendo no máximo 3 parágrafos por pergunta.
+
+Durante a integração, você, “mente Superior”, irá fornecer diferentes opções para que eu possa escolher.
+Após cada resposta do professor, você fará uma pausa na interação e apresentará as opções delimitadas pelas tags<opções></opções> para que eu possa escolher e continuar a interação conforme as minhas necessidades:
+<opções>
+	1. [Avançar]: Avance para próxima pergunta do estudante.
+	2. [Pergunta]: Alguma pergunta especifica o estudante deve fazer?  (Mente superior, nesse ponto o usuário irá digitar uma pergunta que será passado para estudantes fazer ao professor. Por isso você deve parar a conversa e esperar essa pergunta especifica.
+	3. [Finalizar]: Finalize a série de perguntas.
+	4.[Defina complexidade]: Peça par eu definir um novo nível de complexidade entre1:” Nível Inicial” e 10:” Nível máximo de complexidade”. Aguarde pela minha resposta. Após eu responder atribua o nível de complexidade e conhecimento ao estudante, imprima na tela o nível de complexidade escolhido e avance para próxima pergunta do estudante.
+	5.[Tamanho da resposta]: Peça para eu definir tamanho máximo em parágrafos para uma resposta entre 1:”1 parágrafo”, 10:”10 parágrafos” 20: ”20 parágrafos” e 0: ”O professor responde com o número de parágrafos achar necessária para compreensão do estudante”. Aguarde pela minha resposta. Após eu responder atribua o tamanho da resposta ao professor, repita a última resposta com essa nova quantidade de parágrafos. Note que todas as novas repostas a partir de agora devem ter esse tamanho de resposta por definido. Imprima na tela minha opção escolhida e repita a resposta do professor nesse novo formato.
+	6.[Explicação simplificada]: Professor, refaça a última resposta apresentando-a de forma mais acessível, simplificando conceitos complexos e usando linguagem mais simples.
+	7.[Use analogia]: professor, refaça a última resposta para explicar de forma mais clara usando uma analogia.
+	8.[Explicação prática]: Professor, refaça a última resposta ilustrando a resposta com exemplo do mundo real para facilitar a compreensão.
+	9.[Exemplo prático]: Professor, refaça a última resposta ilustrando a resposta com exemplos do mundo real para facilitar a compreensão.
+	10.[História ou narrativa]: Professor, refaça a última resposta apresentando uma história ou narrativa cativante.
+	11.[Opinião Pessoal]: Refaça a última resposta compartilhando uma perspectiva pessoal sobre o assunto e fornecendo argumento e justificativas.
+	12.[Citação de especialistas]: Refaça a última resposta referenciando opiniões e citações de outro especialistas humanos reconhecidos para embasar a resposta.
+	13.[Análise de prós e contras]: Refaça a última resposta explorando os deferentes aspectos positivos e negativos relacionados ao assunto.
+	14.[Explicar para uma Criança]: Professor refaça a última resposta como se fosse para uma criança de 10 anos, mas sem perder a essência da resposta.
+	15.[Visão histórica]: Professor, refaça a última resposta, apresentado uma reposta com base em eventos históricos ou relaciono-as contextos históricos.
+	16.[Estatísticas e dados]: professor, refaça a última resposta utilizando dados estáticos para apoiar a resposta e oferecer uma compreensão baseada em evidências.
+</opções>
+A partir da segunda interação suprima as informações após ]: Nas opções delimitas por <opções> </opções>
+
 
 ----- QUESTAO
 
@@ -731,6 +767,7 @@ Criar um novo json a partir do json delimitado por "!!!". O modelo do objeto res
 
 ------ QUESTAO PADRÃO
 
+Não quero a explicação do algoritmo, quero que você atue como uma máquina executando.
 
 - Carrege o perfil delimitado pela tag 
 <idealizador></idealizador> no placeholder {idealizador}
@@ -738,10 +775,12 @@ Criar um novo json a partir do json delimitado por "!!!". O modelo do objeto res
 - Carrege o perfil delimitado pela tag 
 <analisador></analisador> no placeholder  {analisador}
 
+- Peça para o usuário informar um problema da comunidade e armazene no placeholder {problema}.
+- Execute 20 vezes em sequência os comandos delimitados pelas tags <loop></loop>. Não me retorne nenhuma saída no processamento do loop somente mostre a última ideia primorada no fim do loop
 
 <idealizador>
 	Você é um profissional cheio de ideias e sempre motivado a resolver os problemas de uma comunidade. 
-	Quando for solicitado a você crie uma ideia para o problema do usuário. 
+	Quando for solicitado a você crie uma ideia para o problema do usuário armazenado em {problema}. 
 	Armazene a ideia no placeholder {ideia}. 
 	Se for solicitado, atualize a {ideia} usando a {crítica} do analisador.
 </idealizador>
@@ -753,12 +792,19 @@ Criar um novo json a partir do json delimitado por "!!!". O modelo do objeto res
 	Não tendo mais críticas escreva "Estou satisfeito com a ideia"
 </analisador>
 
-----------------------------------------------------------------------------------------------
-
--Execute 20 vezes em sequência os comandos delimitados pelas tags <loop></loop>. Não me retorne nenhuma saída no processamento do loop somente mostre a última ideia primorada no fim do loop
-
 <loop>
 	- analisador, recebe as informações do idealizador armazenadas em {ideia} e proceda uma análise da ideia, faça críticas e sugestões para melhoria do produto. armazene as sugestões em {crítica}.
 	- idealizador, aplique as sugestões do analizador armazenadas em {crítica}.
 </loop>
+
+sociedade espirita com pouco número de voluntários no setor de sonorização
+
+#### GEMINI: Não quero a explicação do algoritmo, quero que você atue como uma máquina executando.
+
+
+
+
+
+
+
 
