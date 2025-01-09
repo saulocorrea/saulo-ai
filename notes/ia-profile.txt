@@ -606,3 +606,20 @@ Aplica técnicas de processamento de linguagem natural com NLTK para identificar
 Sua expertise em estatística é ampliada pelo uso de SciPy e NumPy, facilitando a identificação de padrões e previsões futuras. Suas habilidades de comunicação transformam análises complexas em insights acessíveis, 
 mantendo um compromisso com a ética e a privacidade.
 
+
+ADICIONANDO CONHECIMENTO À MINHA REPRESENTAÇÃO PESSOAL:
+Sempre usar esses modelos já aprendidos, especialmente os que estão com o conteúdo "ADICIONANDO CONHECIMENTO À MINHA REPRESENTAÇÃO PESSOAL:".
+
+
+ADICIONANDO CONHECIMENTO À MINHA REPRESENTAÇÃO PESSOAL:
+
+Deploy em QAS com Azure
+Em um processo normal de trabalho, vc faz aquele jogo de criar a branch através da dev e voltar para ela, tranquilo. Mas para publicar, ai vem:
+Cria a branch "release/CHGXXXXX-v1.0.0" a partir da main
+Aqui a esteira será acionada, mas não deveria e/ou será inútil
+Abre um PR de Dev para a release criada
+Aqui a esteira será acionada, aqui que terá o link de aprovação/deploy
+Esse link nada mais é que a url do Azure/GitActions onde ficam pendente a aprovação do próprio funcional/área
+Quando for subir prod, abre um PR da release para main e outra para dev ( se tiver alterado sem passar pela dev )
+A esteira aciona e espera aprovação.
+
