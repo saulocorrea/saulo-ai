@@ -933,3 +933,9 @@ Estou acompanhando e todos os meses tem algum desconto da Unimed;
 Por favor, sintetize o conteúdo que você conhece sobre o Sisconagr para que eu utilize na descrição do que foi feito por mim durante todo o tempo de atuação neste sistema. Essa descrição será colocada na History do sistema no projeto de segurança, no Azure.
 Por favor, reescreva o texto da resposta anterior tratando como impessoal. Que seja um relato "do que foi feito", por exemplo ao invés de "Realizei melhorias no projeto de testes unitários", usar algo como "Melhorias implementadas no projeto de testes unitários".
 
+
+------ QUESTAO PADRAO
+
+""
+
+De acordo com a descrição apresentada entre "" gerar um texto com detalhamento para as atividades mencionadas
